@@ -1,0 +1,122 @@
+<!-- inspired by the image from https://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/build-an-html-email-template-from-scratch/ -->
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Kelly+Slab|Mukta+Mahee" rel="stylesheet">
+  </head>
+
+<body>
+  <style>
+    body {
+  background: #70bbd9;
+  padding: 50px;
+}
+
+.envelope {
+  position: relative;
+  margin: 50px auto 0;
+  width: 98px;
+  height: 66px;
+  background: #c94548;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 0 1px #c94548 inset;
+}
+.envelope:before,
+.envelope:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-width: 33px 49px;
+}
+.envelope:before {
+  border-bottom-color: #c94548;
+  top: -100%;
+  left: 0px;
+}
+.envelope:after {
+  border-right-color: #ed4c50;
+  border-left-color: #fa565a;
+  border-bottom-color: #fa565a;
+  top: 0;
+  border-radius: 0 0 5px 5px;
+  transform: rotate(360deg);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.25);
+}
+
+.paper {
+  background: #fff;
+  width: 87px;
+  height: 66px;
+  margin: 0 auto;
+  border-radius: 5px;
+  position: absolute;
+  left: 6px;
+  top: -33px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.25);
+}
+.paper:before,
+.paper:after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  background: #e3f1fc;
+  height: 4px;
+  border-radius: 5px;
+}
+.paper:before {
+  top: 14px;
+  width: 31px;
+}
+.paper:after {
+  right: 12px;
+  top: 28px;
+  box-shadow:
+    0 8px 0 #e3f1fc,
+    0 16px 0 #e3f1fc,
+    0 24px 0 #e3f1fc,
+    0 40px 0 #e3f1fc;
+}
+
+#msg { text-align: center;
+  font-size: 30px;
+  font-family: 'Mukta Mahee', sans-serif;}
+
+#from {text-align: center;
+  font-size: 12px;
+  font-style: italic;
+
+  font-family: 'Mukta Mahee', sans-serif;}
+
+#date {text-align: center;
+  font-size: 9px;
+
+  font-family: 'Mukta Mahee', sans-serif;}
+
+#to {text-align: center;
+  font-size: 30px;
+  font-style: italic;
+  font-family: 'Mukta Mahee', sans-serif;}
+
+#logo {text-align: center;
+  font-size: 30px;
+  font-family: 'Kelly Slab', cursive;}
+    a {color: black}
+  </style>
+  <div id="logo"><a href="http://ki.tc">KI.TC</a></div>
+
+<div class="envelope">
+  <div class="paper"></div>
+</div>
+
+<div id="to"><p>Dear {{to}}</p></div>
+<div id="msg"><p>{{msg}}</p></div>
+</br>
+<div id="from"><h1>{{fromm}}</h1></div>
+
+<div id="date"><h1>{{time}}</h1></div>
+
+<br><br><br><br>
+<div id="date">css by <a href="https://codepen.io/peiche/pen/FLkbq">Paul</a></div>
+</body>
+</html>

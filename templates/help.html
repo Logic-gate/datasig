@@ -1,0 +1,587 @@
+
+<html itemscope itemtype="http://schema.org/Article">
+  
+  <head>
+  <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Open+Sans" rel="stylesheet">
+  </head>
+  
+  <body>
+
+<style type="text/css">
+
+@charset "utf-8";
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+/* A more considered reset; more of a restart... As per: csswizardry.com/2011/10/reset-restarted */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr,
+a, abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strong, sub, sup, tt, var,
+b, u, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+}
+article, aside, details, figcaption, figure, footer,
+header, hgroup, menu, nav, section {
+    display: block;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+strong, b, mark {
+    font-weight: bold;
+    font-style: inherit;
+}
+em, i, cite, q, address, dfn, var {
+    font-style: italic;
+    font-weight: inherit;
+}
+abbr[title], dfn[title] {
+    cursor: help;
+    border-bottom: 1px dotted;
+}
+ins {
+    border-bottom: 1px solid;
+}
+a, u, ins {
+    text-decoration: none;
+}
+del, s {
+    text-decoration: line-through;
+}
+pre, code, samp, kbd {
+    font-family: monospace;
+}
+small {
+    font-size: 0.75em;
+}
+img {
+    border: none;
+    font-style: italic;
+}
+input,
+select, option, optgroup,
+textarea {
+    font: inherit;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+html {
+    background-color: #f6f9f9;
+    color: #95a4a9;
+    font: 12px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body {
+    margin: 10%;
+}
+
+.avatar {
+    float: left;
+    margin: 0 40px 20px 0;
+}
+    .avatar img {
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 125px;
+    }
+
+.content {
+    float: left;
+    width: 300px;
+}
+    .title {
+        font-size: 48px;
+        font-weight: normal;
+        line-height: 1;
+    }
+
+    .social-icons li {
+        display: inline;
+    }
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            text-indent: -9999px;
+        }
+            .twitter {
+                background-image: url(../img/twitter.png);
+                width: 20px;
+                height: 17px;
+            }
+            .facebook {
+                background-image: url(../img/facebook.png);
+                width: 10px;
+                height: 19px;
+            }
+            .googleplus {
+                background-image: url(../img/googleplus.png);
+                width: 21px;
+                height: 19px;
+            }
+            .dribbble {
+                background-image: url(../img/dribbble.png);
+                width: 21px;
+                height: 19px;
+            }
+            .instagram {
+                background-image: url(../img/instagram.png);
+                width: 20px;
+                height: 19px;
+            }
+            .flickr {
+                background-image: url(../img/flickr.png);
+                width: 20px;
+                height: 9px;
+            }
+
+
+
+
+
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
+p,
+ul, ol, dl,
+.title {
+    margin-bottom: 20px;
+}
+p {
+    font-weight: bold;
+}
+ul, ol, dl {
+    list-style-type: none;
+}
+a {
+    color: #339999;
+    font-weight: bold;
+}
+a:hover, a:focus {
+    color: #95a4a9;
+    -webkit-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    -ms-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $MISC
+\*------------------------------------*/
+a img:hover,
+.social-icons a:hover {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+    filter: alpha(opacity=85);
+    opacity: 0.85;
+    -webkit-transition: opacity 0.2s ease;
+    -moz-transition: opacity 0.2s ease;
+    -o-transition: opacity 0.2s ease;
+    -ms-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
+}
+
+/*
+Animate.css - http://daneden.me/animate
+LICENSED UNDER THE  MIT LICENSE (MIT)
+
+Copyright (c) 2012 Dan Eden
+*/
+.animated {
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.animated.hinge {
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -ms-animation-duration: 2s;
+    -o-animation-duration: 2s;
+    animation-duration: 2s;
+}
+
+@-webkit-keyframes bounceInDown {
+    0% {
+        -webkit-transform: translateY(-2000px);
+    }
+    
+    60% {
+        -webkit-transform: translateY(30px);
+    }
+    
+    80% {
+        -webkit-transform: translateY(-10px);
+    }
+    
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}
+
+@-moz-keyframes bounceInDown {
+    0% {
+        -moz-transform: translateY(-2000px);
+    }
+    
+    60% {
+        -moz-transform: translateY(30px);
+    }
+    
+    80% {
+        -moz-transform: translateY(-10px);
+    }
+    
+    100% {
+        -moz-transform: translateY(0);
+    }
+}
+
+@-o-keyframes bounceInDown {
+    0% {
+        -o-transform: translateY(-2000px);
+    }
+    
+    60% {
+        -o-transform: translateY(30px);
+    }
+    
+    80% {
+        -o-transform: translateY(-10px);
+    }
+    
+    100% {
+        -o-transform: translateY(0);
+    }
+}
+
+@keyframes bounceInDown {
+    0% {
+        transform: translateY(-2000px);
+    }
+    
+    60% {
+        transform: translateY(30px);
+    }
+    
+    80% {
+        transform: translateY(-10px);
+    }
+    
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bounceInDown {
+    -webkit-animation-name: bounceInDown;
+    -moz-animation-name: bounceInDown;
+    -o-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $MOBILE
+\*------------------------------------*/
+@media handheld, only screen and (max-width: 720px) {
+    .avatar,
+    .content {
+        float: none;
+        
+    }
+
+    .avatar img {
+        max-width: 125px;
+        max-height: 125px;
+    }
+
+    .content {
+        width: 100%;
+    }
+}
+/*
+Table Style - This is what you want
+------------------------------------------------------------------ */
+table a:link {
+  color: #666;
+  font-weight: bold;
+  text-decoration:none;
+}
+table a:visited {
+  color: #999999;
+  font-weight:bold;
+  text-decoration:none;
+}
+table a:active,
+table a:hover {
+  color: #bd5a35;
+  text-decoration:underline;
+}
+table {
+  font-family:Arial, Helvetica, sans-serif;
+  color:#666;
+  font-size:12px;
+  text-shadow: 1px 1px 0px #fff;
+  background:#eaebec;
+  margin:20px;
+  border:#ccc 1px solid;
+
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+
+  -moz-box-shadow: 0 1px 2px #d1d1d1;
+  -webkit-box-shadow: 0 1px 2px #d1d1d1;
+  box-shadow: 0 1px 2px #d1d1d1;
+}
+table th {
+  padding:21px 25px 22px 25px;
+  border-top:1px solid #fafafa;
+  border-bottom:1px solid #e0e0e0;
+
+  background: #ededed;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+  background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+}
+table th:first-child {
+  text-align: left;
+  padding-left:20px;
+}
+table tr:first-child th:first-child {
+  -moz-border-radius-topleft:3px;
+  -webkit-border-top-left-radius:3px;
+  border-top-left-radius:3px;
+}
+table tr:first-child th:last-child {
+  -moz-border-radius-topright:3px;
+  -webkit-border-top-right-radius:3px;
+  border-top-right-radius:3px;
+}
+table tr {
+  text-align: center;
+  padding-left:20px;
+}
+table td:first-child {
+  text-align: left;
+  padding-left:20px;
+  border-left: 0;
+}
+table td {
+  padding:18px;
+  border-top: 1px solid #ffffff;
+  border-bottom:1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  
+  background: #fafafa;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+  background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+}
+table tr.even td {
+  background: #f6f6f6;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+  background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
+}
+table tr:last-child td {
+  border-bottom:0;
+}
+table tr:last-child td:first-child {
+  -moz-border-radius-bottomleft:3px;
+  -webkit-border-bottom-left-radius:3px;
+  border-bottom-left-radius:3px;
+}
+table tr:last-child td:last-child {
+  -moz-border-radius-bottomright:3px;
+  -webkit-border-bottom-right-radius:3px;
+  border-bottom-right-radius:3px;
+}
+table tr:hover td {
+  background: #f2f2f2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+  background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);  
+}
+
+</style>
+<div class="avatar">
+      <img src="http://i.imgur.com/LSfJBEF.png" alt="Avatar">
+    </div>
+    
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l">command</th>
+    <th class="tg-yw4l">info</th>
+    <th class="tg-yw4l">output</th>
+    <th class="tg-yw4l">param</th>
+    <th class="tg-yw4l">example</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/news</td>
+    <td class="tg-yw4l">Random news link from Google News</td>
+    <td class="tg-yw4l">json</td>
+    <td class="tg-yw4l">n/a</td>
+    <td class="tg-yw4l">/news</td>
+  </tr>
+
+  <tr>
+    <td class="tg-yw4l">/urban</td>
+    <td class="tg-yw4l">Random word from urbandictionary.com</td>
+    <td class="tg-yw4l">json</td>
+    <td class="tg-yw4l">n/a</td>
+    <td class="tg-yw4l">/urban</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/jokes</td>
+    <td class="tg-yw4l">Random joke from ajokeaday.com</td>
+    <td class="tg-yw4l">json</td>
+    <td class="tg-yw4l">n/a</td>
+    <td class="tg-yw4l">/jokes</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/short</td>
+    <td class="tg-yw4l">Short URL expander </td>
+    <td class="tg-yw4l">json</td>
+    <td class="tg-yw4l">url</td>
+    <td class="tg-yw4l">/short?url=http://tinyurl.com/jhkjh78</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/qoute</td>
+    <td class="tg-yw4l">Qoute of the day from Eduro</td>
+    <td class="tg-yw4l">json</td>
+    <td class="tg-yw4l">n/a</td>
+    <td class="tg-yw4l">/qoute</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/me</td>
+    <td class="tg-yw4l">List your user-agent and public IP</td>
+    <td class="tg-yw4l">json</td>
+    <td class="tg-yw4l">n/a</td>
+    <td class="tg-yw4l">/me</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/whois</td>
+    <td class="tg-yw4l">whois</td>
+    <td class="tg-yw4l">json</td>
+    <td class="tg-yw4l">address</td>
+    <td class="tg-yw4l">/whois?address=google.com</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/giphy</td>
+    <td class="tg-yw4l">Random gif from giphy</td>
+    <td class="tg-yw4l">json</td>
+    <td class="tg-yw4l">q</td>
+    <td class="tg-yw4l">/giphy?q=cat</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/gf</td>
+    <td class="tg-yw4l">Redirects to gif | for sharing</td>
+    <td class="tg-yw4l">302</td>
+    <td class="tg-yw4l">q</td>
+    <td class="tg-yw4l">/gf?q=cat</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/twitter/$USER</td>
+    <td class="tg-yw4l">Show basic information about the user</td>
+    <td class="tg-yw4l">curl based | not for browsers</td>
+    <td class="tg-yw4l">n/a</td>
+    <td class="tg-yw4l">/twitter/m4d_d3v</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/twitter/$USER/$TWEET_ID</td>
+    <td class="tg-yw4l">Show stats about a tweet</td>
+    <td class="tg-yw4l">curl based | not for browsers</td>
+    <td class="tg-yw4l">n/a</td>
+    <td class="tg-yw4l">/twitter/ncilla/701787320081633285</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/twitter/following</td>
+    <td class="tg-yw4l">Get "following"</td>
+    <td class="tg-yw4l">json</td>
+    <td class="tg-yw4l">screen_name</td>
+    <td class="tg-yw4l">/twitter/following?screen_name=m4d_d3v</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/twitter/followers</td>
+    <td class="tg-yw4l">Get "followers"</td>
+    <td class="tg-yw4l">json</td>
+    <td class="tg-yw4l">screen_name</td>
+    <td class="tg-yw4l">/twitter/followers?screen_name=m4d_d3v</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">/yt</td>
+    <td class="tg-yw4l">Download youtube videos</td>
+    <td class="tg-yw4l">json</td>
+    <td class="tg-yw4l">id, format, res</td>
+    <td class="tg-yw4l">/yt?id=XDDgL0WvtEs</td>
+  </tr>
+    <tr>
+    <td class="tg-yw4l">/forward</td>
+    <td class="tg-yw4l">302 any link</td>
+    <td class="tg-yw4l">302</td>
+    <td class="tg-yw4l">url</td>
+    <td class="tg-yw4l">/forward?url=http://www.google.com</td>
+  </tr>
+   <tr>
+    <td class="tg-yw4l">/links</td>
+    <td class="tg-yw4l">Retrieve all links from a page</td>
+    <td class="tg-yw4l">josn</td>
+    <td class="tg-yw4l">url</td>
+    <td class="tg-yw4l">/links?url=http://www.callerpy.io</td>
+  </tr>
+    <tr>
+    <td class="tg-yw4l">/img</td>
+    <td class="tg-yw4l">Extract all images from a webpage</td>
+    <td class="tg-yw4l">josn</td>
+    <td class="tg-yw4l">url</td>
+    <td class="tg-yw4l">/img?url=http://www.callerpy.io</td>
+  </tr>
+   <tr>
+    <td class="tg-yw4l">/m</td>
+    <td class="tg-yw4l">Message System</td>
+    <td class="tg-yw4l">json</td>
+    <td class="tg-yw4l">POST</td>
+    <td class="tg-yw4l">curl -i -H "Content-Type: application/json" -X POST -d '{"to": "Friend", "msg": "This is a test, a really cool test, Blah blah blah", "from": "A"}' http://ki.tc/m
+</td>
+  </tr>
+     <tr>
+    <td class="tg-yw4l">/m/admin/ADMIN_ID</td>
+    <td class="tg-yw4l">Message System</td>
+    <td class="tg-yw4l">json</td>
+    <td class="tg-yw4l">Methods: GET(Logging) | DELETE</td>
+    <td class="tg-yw4l">curl -i -H "Content-Type: application/json" -X GET//DELETE http://ki.tc/m/admin/ADMIN_ID
+</td>
+  </tr>
+</table>
+
+</body>
+</html>

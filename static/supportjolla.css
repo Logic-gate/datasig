@@ -1,0 +1,220 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: "proxima-nova";
+  background: #195f5f;
+}
+
+img, .button {
+  display: block;
+  flex-direction: row;
+  margin: 4rem auto 0;
+  max-width: 26rem;
+  
+}
+
+a {
+  color: #fff;
+}
+
+span {
+  color: #f77; 
+}
+
+.head{
+  float: left;
+width: 100%;
+text-align: center;
+line-height: 1.8rem;
+margin-top: 5%;
+margin-bottom: 2.5%;
+color: rgba(255, 255, 255, .4);
+font-size: 50px;
+}
+
+
+#love{
+   float: left;
+width: 100%;
+text-align: center;
+line-height: 1.8rem;
+margin-top: 5%;
+color: rgba(255, 255, 255, .4);
+font-size: 35px;
+}
+
+.user{
+font-size: 15px;
+}
+
+h3{
+ font-size: 15px; 
+  float: right;
+  width: 100%;
+}
+
+p{
+  font-size: 2rem;
+  font-style: normal;
+  
+}
+
+
+footer {
+float: left;
+width: 100%;
+text-align: center;
+line-height: 1.8rem;
+margin-top: 5%;
+margin-bottom: 2.5%;
+color: rgba(255, 255, 255, .4);
+font-size: .6rem;
+  
+}
+form{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 4rem auto 0;
+  max-width: 26rem;
+}
+
+.title {
+  color: rgba(255, 255, 255, .4);
+  font-family: "proxima-nova";
+  padding: 0rem .5em 2em;
+  font-size: .6rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+.input-field {
+  padding: 0 .5em 2em;
+}
+
+.input-field.half {
+  flex: 1 0 50%;
+}
+
+.input-field.full {
+  flex: 2 0 100%;
+}
+
+label {
+  font-family: "proxima-nova";
+  display: block;
+  position: relative;
+  z-index: -9;
+  top: 1.5rem;
+  color: rgba(255, 255, 255, .4);
+  font-size: .875rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: top .3s ease, color .3s ease;
+}
+
+label.raised {
+  top: 0rem;
+}
+
+label.highlight {
+  color: rgba(255, 255, 255, .6);
+}
+
+[type='name']{
+  max-width: 13rem; 
+  border: none;
+  border-bottom: 1px solid;
+  background: none;
+  transition: color .3s ease;
+  color: rgba(255, 255, 255, .4);
+  font-family: "proxima-nova";
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  max-height: 2rem;
+  
+}
+
+[type="text"] {
+  color: rgba(255, 255, 255, .4);
+  font-family: "proxima-nova";
+  padding: .25rem 0 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid;
+  background: none;
+  transition: color .3s ease;
+}
+
+[placeholder]{
+  text-align: center;
+}
+
+[type="text"]:focus,
+[type="name"]:focus {
+  color: rgba(255, 255, 255, 1);
+  outline: 0;
+  text-align: left;
+}
+
+.button {
+   border: 1px solid #195f5f;
+   background: #195f5f;
+   background: -webkit-gradient(linear, left top, left bottom, from(#195f5f), to(#195f5f));
+   background: -webkit-linear-gradient(top, #195f5f, #195f5f);
+   background: -moz-linear-gradient(top, #195f5f, #195f5f);
+   background: -ms-linear-gradient(top, #195f5f, #195f5f);
+   background: -o-linear-gradient(top, #195f5f, #195f5f);
+   background-image: -ms-linear-gradient(top, #195f5f 0%, #195f5f 100%);
+   padding: 10.5px 21px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
+   text-shadow: #ffffff 0 1px 0;
+   color: #ffffff;
+   font-size: 90px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border: 1px solid #195f5f;
+   text-shadow: #f21111 0 1px 0;
+   background: #195f5f;
+   background: -webkit-gradient(linear, left top, left bottom, from(#195f5f), to(#195f5f));
+   background: -webkit-linear-gradient(top, #195f5f, #195f5f);
+   background: -moz-linear-gradient(top, #195f5f, #195f5f);
+   background: -ms-linear-gradient(top, #195f5f, #195f5f);
+   background: -o-linear-gradient(top, #195f5f, #195f5f);
+   background-image: -ms-linear-gradient(top, #195f5f 0%, #195f5f 100%);
+   color: #f77;
+   }
+.button:active {
+   text-shadow: #ff0505 0 1px 0;
+   border: 1px solid #195f5f;
+   background: #195f5f;
+   background: -webkit-gradient(linear, left top, left bottom, from(#195f5f), to(#195f5f));
+   background: -webkit-linear-gradient(top, #195f5f, #195f5f);
+   background: -moz-linear-gradient(top, #195f5f, #195f5f);
+   background: -ms-linear-gradient(top, #195f5f, #195f5f);
+   background: -o-linear-gradient(top, #195f5f, #195f5f);
+   background-image: -ms-linear-gradient(top, #195f5f 0%, #195f5f 100%);
+   color: #ff0000;
+   }

@@ -1,0 +1,45 @@
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link href="{{url_for('static', filename='supportjolla.css')}}" rel="stylesheet">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<span class='head'>I Support</span>
+ <img src='http://jolla.com/media/images/jolla-logo-1_0.png' height='90px'/>
+
+{% block content %}
+{% endblock %}
+   
+
+<footer>
+
+"Jolla", "Sailfish", and Jolla logo are registered trademark of Jolla Ltd. Support Jolla is not affiliated with Jolla Ltd.
+Questions regarding Support Jolla can be tweeted to <span>@JoshStrobl</span> or <span>@m4d_d3v</span>.
+<br />
+I Support Jolla <span>❤️</span> Open Source. Get the source code on <a href="https://github.com/JoshStrobl/I-Support-Jolla" target="_blank" tabindex="7">GitHub</a>.
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,951 @@
+<html itemscope itemtype="http://schema.org/Article">
+ <head>
+ <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+ <script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/316871/termynal.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+
+<script type="text/javascript">
+  
+  var termynal = new Termynal('#termynal');
+var feature = document.getElementsByClassName("features-new");
+var landing = document.getElementsByClassName("landing");
+console.log(feature[0].offsetTop);
+console.log(landing[0].clientHeight);
+var landingHeight = landing[0].clientHeight;
+
+
+$(window).scroll(function() {
+  checkScroll();
+});
+
+function checkScroll() {
+  if (document.body.scrollTop > 100) {
+     console.log("hey");
+  } 
+};
+
+</script>
+  <style type="text/css">
+    
+    *, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, html {padding: 0; margin: 0; font-family: 'PT Sans', sans-serif;}
+body {background: #ddd;} 
+a {text-decoration:none;}
+
+/*  NAVIGATION
+=================*/
+.nav {
+  position: fixed;
+   top: 0;
+   left: 0;
+   /* height: 70px; */
+   width: 100%;
+   background-color: white;
+   text-align: right;
+  z-index: 100;
+  font-family: 'PT Sans', sans-serif;
+}
+.nav-inner {
+  width: 80%;
+  margin: 0 auto;
+  padding-top:5px;
+  /* border: 1px solid black; */
+}
+.nav-inner a {
+  line-height: 90px;  
+}
+.nav-link {
+  margin:0 20px;
+  /* padding: 0px 20px; */
+  color: #555;
+  position:relative;
+}
+.nav-logo {
+  float: left;
+   color: rgb(140, 223, 213);
+  font-size: 34px;
+}
+.nav-logo .fa-cube {
+  border: 4px solid rgb(140, 223, 213);
+  padding: 5px 5px 6px 8px;
+  transition: all .5s;
+}
+.nav-logo:hover .fa-cube {
+  color:white;
+  background:rgb(140, 223, 213);
+  -webkit-transform: rotateX(360deg); /* Safari */
+   transform: rotateX(360deg); /* Standard syntax */
+}
+svg.nav-anime {
+  display: inline-block;
+  position: absolute;
+  bottom: -8px;
+  width: 100%;
+  height: 40px;
+}
+.nav-shape {
+  width: 100%;
+  height: 40px;
+  stroke-dasharray: 40 270;
+   stroke-dashoffset: -150;
+   stroke-width: 6px;
+   fill: transparent;
+   stroke: rgb(140, 223, 213);
+   transition: 
+    stroke-width 1s, 
+    stroke-dashoffset 1s, 
+    stroke-dasharray 1s;
+}
+.text {
+  line-height: 32px; 
+  padding: 0px 10px;
+   position: relative;
+   display: inline-block; 
+  transition: all .3s;
+}
+.nav-trial:hover .trial-a { opacity: 1;}
+.trial-a {
+  content: "2-Week Trial";
+  font-size: 12px;
+  line-height: 32px;
+  position: absolute;
+  left: 3px;
+  top: -10px;
+  background: white;
+  opacity: 0;
+}
+.nav-link:hover .nav-shape {
+   stroke-width: 5px;
+   stroke-dashoffset: 0;
+   stroke-dasharray: 700;
+}
+
+/* SECTION LANDING 
+================================*/
+.box {
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 0px;
+}
+span.tag-line {font-size: 42px;
+}
+span.emp {color: #F25F5C; font-weight: 900;
+}
+
+
+.landing {
+  min-height: 100vh;
+  padding: 100px 0px;
+  background: #f8f8f8;
+  overflow:auto;
+  position:relative;
+}
+.landing-box {
+  text-align: center;
+}
+.landing-logo {
+   color: rgb(140, 223, 213);
+  font-size: 48px;  
+}
+.logo-text {
+  font-family: 'Ubuntu'; 
+  font-size: 48px;
+}
+.landing-box p {
+  margin:0 auto;
+  width:60%;
+  padding:30px 0px;
+}
+.landing-button .fa-arrow-down { margin-top: 20px;}
+
+
+
+
+/* SECTION FEATURES NEW 
+================================*/
+
+.features-new {
+  background:white;
+  color:#444;
+  padding:50px 0px;
+}
+.new-box {
+  width:80%;
+  margin:0 auto;
+  text-align:center
+}
+.features-new h2 {
+  display: inline-block;
+}
+.features-new ul {
+  /* border: 5px solid #ddd; */
+  width:100%;
+  text-align:center;
+  /* padding:40px 0px; */
+  margin-top:40px;
+  font-size:0;
+  
+} 
+.features-new ul li{
+  width:100%;
+  display:block;
+  vertical-align:top;
+  margin:80px 0px;
+  font-size:18px;
+  text-align:center;
+  
+}
+.features-new ul li .fa{
+  background: #F7D745;
+  font-size:46px;
+  padding:32px;
+  border-radius:100%;
+  vertical-align:top;
+  /* position:relative; */
+}
+.features-new ul li .info {
+  display:block;
+  padding:0px 40px;
+  margin:0 auto;
+  width:100%;
+}
+.features-new ul li .info h3{
+  font-size:32px;
+  margin:25px 0px;
+
+}
+.features-new ul li .info span{
+  border-bottom:5px solid #ffe169;
+  padding-bottom:5px;
+  margin-bottom:15px;
+  font-weight:900;
+  display:inline-block;
+  
+}
+.features-new ul li .info p{
+  text-align:center;
+  font-size:18px;
+  margin:10px auto;
+  width:60%;
+}
+
+
+
+
+
+
+
+@media screen and (min-width:1200px){
+  .features-new ul {
+    width:100%;
+    text-align:left;
+    padding:0;
+    margin-top:80px;
+    font-size:0;
+  }
+  .features-new ul li{
+    width:33%;
+    display:inline-block;
+    vertical-align:top;
+    margin:0;
+    font-size:18px;
+    text-align:center;
+  }
+  .features-new ul li .fa{
+    background: #F7D745;
+    font-size:16px;
+    padding:12px;
+    border-radius:100%;
+    vertical-align:top;
+    position:relative;
+  }
+  .features-new ul li .info {
+    width:100%;
+  }
+  .features-new ul li .info span {
+    /* text-aign:left; */
+  }
+  .features-new ul li .info p{
+    text-align:left;
+    margin:10px 0px;
+    width:100%;
+  }
+}
+@media screen and (max-width:750px){
+  .nav {display:none;}
+}
+
+:root {
+    --color-bg: #252a33;
+    --color-text: #eee;
+    --color-text-subtle: #a2a2a2;
+}
+[data-termynal] {
+    width: 750px;
+  text-align: left;
+    max-width: 100%;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 10px;
+    font-family: 'Fira Mono', Consolas, Menlo, Monaco, 'Courier New', Courier, monospace;
+    border-radius: 4px;
+    padding: 75px 45px 35px;
+    position: relative;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+[data-termynal]:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    /* A little hack to display the window buttons in one pseudo element. */
+    background: #d9515d;
+    -webkit-box-shadow: 25px 0 0 #f4c025, 50px 0 0 #3ec930;
+            box-shadow: 25px 0 0 #f4c025, 50px 0 0 #3ec930;
+}
+
+[data-ty] {
+    display: block;
+    line-height: 2;
+}
+
+[data-ty]:before {
+    /* Set up defaults and ensure empty lines are displayed. */
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+}
+
+[data-ty="input"]:before,
+[data-ty-prompt]:before {
+    margin-right: 0.75em;
+    color: var(--color-text-subtle);
+}
+
+[data-ty="input"]:before {
+    content: '$';
+  font-size: 10px
+}
+
+[data-ty][data-ty-prompt]:before {
+    content: attr(data-ty-prompt);
+}
+
+[data-ty-cursor]:after {
+    content: attr(data-ty-cursor);
+    font-family: monospace;
+    margin-left: 0.5em;
+    -webkit-animation: blink 1s infinite;
+            animation: blink 1s infinite;
+}
+
+
+/* Cursor animation */
+
+@-webkit-keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+  </style>
+
+<div class="wrap" id="pop">
+  <div class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#">
+        <i class="fa fa-terminal"></i>
+      </a>
+     
+    </div>
+  </div>
+  
+  <section class="landing">
+    <div class="landing-box box">
+      <h1 class="logo-text">
+        <a class="landing-logo">
+          <i class="fa fa-terminal"></i>
+        </a>Ki.tc
+      </h1>
+      <span class="tag-line">
+        <span class="emp">K</span>eep <span class="emp">I</span>t<span class="emp"> T</span>idy <span class="emp">C</span>harles
+      </span>
+      <p>
+    Despite the odd name, unfocused approach, and general chaos that seems to ensue...ki.tc is a fun place. Granted, the API modus operandi adopted here is a cluster-cow, but fear not; documentation has finally arrived.
+      </p>
+    
+    </div>
+  </section>
+  
+  <section class="features-new">
+    <div class="new-box box">
+      <span class="tag-line">
+        How <span class="emp">to</span>
+      </span>
+      <ul>
+                   <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/</h3>
+            <span>URL Shortener</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="1" data-ty-lineDelay="1">
+            <span data-ty="input"># POST<br>URL:| Mandatory</span>
+    <sanp data-ty="input">curl -i -H "Content-Type: application/json" -X POST -d '{"url": "http://google.com"}' http://ki.tc/</sanp>
+                
+    <sanp data-ty='input'>{
+  "url_short": {
+    "_id": "a6cabb3a83d7fee4ecc8b", 
+    "admin_link": "http://ki.tc/url_shortner/a6cabb3a83d7fee4ecc8b", 
+    "link": "http://ki.tc/a7a40", 
+    "time": "Mon, 28 Aug 2017 13:35:37 GMT", 
+    "url": "http://google.com"
+  }
+}
+
+</sanp>
+<span data-ty="input">ADMIN | IP Logger<br>GET<br>URL=http://ki.tc/url_shortner/_ID</span>
+<sanp data-ty="input">curl -i -H "Content-Type: application/json" -X GET http://ki.tc/url_shortner/a6cabb3a83d7fee4ecc8b</sanp>
+<sanp data-ty="input">
+{
+  "2017-08-28 13:39:48": {
+    "659531": {
+      "access_id": "164048dcef07", 
+      "access_time": "Mon, 28 Aug 2017 13:39:48 GMT", 
+      "ip_address": "X.X.X.X", 
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.91 Safari/537.36 Vivaldi/1.92.917.39"
+    }
+  }, 
+  "_id": "a6cabb3a83d7fee4ecc8b", 
+  "url_build": {
+    "_id": "a6cabb3a83d7fee4ecc8b", 
+    "admin_link": "http://ki.tc/url_shortner/a6cabb3a83d7fee4ecc8b", 
+    "link": "http://ki.tc/a7a40", 
+    "time": "Mon, 28 Aug 2017 13:35:37 GMT", 
+    "url": "http://google.com"
+  }, 
+  "url_id": 149470344
+}
+
+</sanp>
+<span data-ty="input">ADMIN | DELETE<br>URL=http://ki.tc/url_shortner/_ID</span>
+<sanp data-ty="input">curl -i -H "Content-Type: application/json" -X DELETE http://ki.tc/url_shortner/a6cabb3a83d7fee4ecc8b
+</sanp>
+<sanp data-ty="input">
+{
+  "result": true
+}
+</sanp>
+</div>
+          </div>
+        
+        </li>
+
+             <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/m</h3>
+            <span>Message System</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+            <span data-ty="input"># POST<br>to:| Mandatory <br>msg:| Mandatory<br>from:| Optional</span>
+    <sanp data-ty="input">curl -i -H "Content-Type: application/json" -X POST -d '{"to": "Friend", "msg": "Hello", "from": "A"}' http://ki.tc/m</sanp>
+                
+    <sanp data-ty='input'>{
+  "message": {
+    "_id": "5e449006732699bd3d7a5", 
+    "from": "A", 
+    "link": "http://ki.tc/m/ea1538f4f7", 
+    "msg": "Hello", 
+    "time": "Mon, 28 Aug 2017 13:13:16 GMT", 
+    "to": "Friend"
+  }
+}
+</sanp>
+<span data-ty="input">ADMIN | IP Logger<br>GET<br>URL=http://ki.tc/m/admin/_ID</span>
+<sanp data-ty="input">curl -i -H "Content-Type: application/json" -X GET http://ki.tc/m/admin/5e449006732699bd3d7a5</sanp>
+<sanp data-ty="input">
+{
+  "3df818b496db": {
+    "access_id": "3df818b496db", 
+    "access_time": "Mon, 28 Aug 2017 13:21:39 GMT", 
+    "ip_address": "X.X.X.X", 
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.91 Safari/537.36 Vivaldi/1.92.917.39"
+  }, 
+  "_id": "5e449006732699bd3d7a5", 
+  "msg_build": {
+    "_id": "5e449006732699bd3d7a5", 
+    "from": "A", 
+    "link": "http://ki.tc/m/ea1538f4f7", 
+    "msg": "Hello", 
+    "time": "Mon, 28 Aug 2017 13:13:16 GMT", 
+    "to": "Friend"
+  }, 
+  "msg_id": 191706421189523233
+}
+</sanp>
+<span data-ty="input">ADMIN | DELETE<br>URL=http://ki.tc/m/admin/_ID</span>
+<sanp data-ty="input">curl -i -H "Content-Type: application/json" -X DELETE http://ki.tc/m/admin/5e449006732699bd3d7a5</sanp>
+<sanp data-ty="input">
+{
+  "result": true
+}
+</sanp>
+</div>
+          </div>
+        
+        </li>
+        <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/news</h3>
+            <span>Random news link from Google News</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+    <sanp data-ty="input">curl http://ki.tc/news</sanp>
+                
+    <sanp data-ty='input'>{
+  "/news": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQHPDZR6R90Q6oTKoq2dpkZATvjkc-62PsqpI5TZV4WUmNxsYEOJSvwbQ_-5ND5fkQcfQQobabmdJE"
+}
+</sanp>
+  
+</div>
+        </div>          
+        </li>
+            
+        <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/urban</h3>
+            <span>Random word from urbandictionary.com</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+    <sanp data-ty="input">curl http://ki.tc/urban</sanp>
+                
+    <sanp data-ty='input'>{
+  {
+  "/urban": {
+    "example": "Jeff is a party pooper because he won&apos;t play Spin The Bottle.", 
+    "meaning": "A person who ruins a party by either stopping the fun or not participating in a certain activity.", 
+    "word": "party pooper"
+  }
+}
+
+</sanp>
+  
+        </div>        
+          </div>
+          
+        </li>
+            
+        <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/jokes</h3>
+            <span>Random joke from ajokeaday.com</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+    <sanp data-ty="input">curl http://ki.tc/jokes</sanp>
+                
+    <sanp data-ty='input'>{
+  "/jokes": "A man in a hot air ball....
+}
+
+</sanp>
+  
+</div>
+          </div>
+        
+        </li>
+         <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/short</h3>
+            <span>Short URL expander</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+             <span data-ty="input"># ?url=URL</span>
+    <sanp data-ty="input">curl http://ki.tc/short?url=http://tinyurl.com/jhkjh78</sanp>
+                
+    <sanp data-ty='input'>{
+  "/short": {
+    "destination": "https://www.tripleclicks.com/14296529/detail?item=498072", 
+    "short_url": "http://tinyurl.com/jhkjh78"
+  }
+}
+
+</sanp>
+  
+</div>
+          </div>
+        
+        </li>
+         <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/qoute</h3>
+            <span>Qoute of the day from Eduro</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+    <sanp data-ty="input">curl http://ki.tc/qoute</sanp>
+                
+    <sanp data-ty='input'>{
+  "/qoute": {
+    "author": " Victor Hugo", 
+    "qoute": "Forty is the old age of youth; fifty is the youth of old age."
+  }
+}
+
+
+</sanp>
+  
+</div>
+          </div>
+        
+        </li>
+             
+         <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/me</h3>
+            <span>List your user-agent and public IP</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+    <sanp data-ty="input">curl http://ki.tc/me</sanp>
+                
+    <sanp data-ty='input'>{
+  "/me": {
+    "ip": "127.0.0.1", 
+    "user_agent": "curl/7.55.1"
+  }
+}
+
+
+
+
+</sanp>
+  
+</div>
+          </div>
+        
+        </li>
+                 <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/whois</h3>
+            <span>ICANN's WHOIS Lookup</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+             <span data-ty="input"># ?address=URL</span>
+    <sanp data-ty="input">curl http://ki.tc/whois?address=google.com</sanp>
+                
+    <sanp data-ty='input'>{
+  "/whois": {
+    "contacts": {
+      "admin": null, 
+      "billing": null, 
+      "registrant": null, 
+      "tech": null
+    }, 
+    "creation_date": [
+      "Mon, 15 Sep 1997 04:00:00 GMT"
+    ], 
+    "emails": [
+      "abusecomplaints@markmonitor.com"
+    ], 
+    "expiration_date": [
+      "Mon, 14 Sep 2020 04:00:00 GMT"
+    ], 
+    "id": [
+      "2138514_DOMAIN_COM-VRSN"
+    ], 
+    "nameservers": [
+      "NS1.GOOGLE.COM", 
+      "NS2.GOOGLE.COM", 
+      "NS3.GOOGLE.COM", 
+      "NS4.GOOGLE.COM"
+    ], 
+...
+
+
+
+</sanp>
+  
+</div>
+          </div>
+        
+        </li>
+
+         <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/giphy</h3>
+            <span>Random gif from giphy</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+             <span data-ty="input"># ?q=QUERY</span>
+    <sanp data-ty="input">curl http://ki.tc/giphy?q=cat</sanp>
+                
+    <sanp data-ty='input'>{
+  "/giphy": {
+    "url": "https://media1.giphy.com/media/WJOq6yKop0A1y/200.gif?fingerprint=e1bb72ff59a4124e77375333633f0a91"
+  }
+}
+
+
+
+
+
+</sanp>
+  
+</div>
+          </div>
+        
+        </li>
+
+            <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/gf</h3>
+            <span>Redirects to gif | for sharing | 302</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+             <span data-ty="input"># ?q=QUERY</span>
+    <sanp data-ty="input">curl http://ki.tc/gf?q=cat</sanp>
+                
+    <sanp data-ty='input'>Redirecting...<br>
+Redirecting...<br>
+You should be redirected automatically to target URL: https://media1.giphy.com/media/WJOq6yKop0A1y/200.gif?fingerprint=e1bb72ff59a412be6473343673d68e0f
+
+
+
+
+
+</sanp>
+  
+</div>
+          </div>
+        
+        </li>
+
+                <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/twitter/following</h3>
+            <span>Get "following" | Limited</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+             <span data-ty="input"># ?screen_name=SCREEN_NAME</span>
+    <sanp data-ty="input">curl http://ki.tc/twitter/following?screen_name=m4d_d3v</sanp>
+                
+    <sanp data-ty='input'>{
+  "/twiiter/following": {
+    "next_cursor": 1567916506104195618, 
+    "next_cursor_str": "1567916506104195618", 
+    "previous_cursor": 0, 
+    "previous_cursor_str": "0", 
+    "users": [
+      {
+        "blocked_by": false, 
+        "blocking": false, 
+        "contributors_enabled": false, 
+        "created_at": "Wed Jan 21 13:42:31 +0000 2009", 
+        "default_profile": false, 
+        "default_profile_image": false, 
+        "description": "Christopher Anderton. Tusenkonstn\u00e4r \u2014 Graphic artist \u2014 Book collector. Topics: Art, Mac OS X, Design, Science, Languages, Nostalgia.", 
+         ...
+
+</sanp>
+  
+</div>
+          </div>
+        
+        </li>
+                <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/twitter/followers</h3>
+            <span>Get "followers" | Limited</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+             <span data-ty="input"># ?screen_name=SCREEN_NAME</span>
+    <sanp data-ty="input">curl http://ki.tc/twitter/followers?screen_name=m4d_d3v</sanp>
+                
+    <sanp data-ty='input'>{
+  "/twiiter/followers": {
+    "next_cursor": 1551032752604108384, 
+    "next_cursor_str": "1551032752604108384", 
+    "previous_cursor": 0, 
+    "previous_cursor_str": "0", 
+    "users": [
+      {
+        "blocked_by": false, 
+        "blocking": false, 
+        "contributors_enabled": false, 
+        "created_at": "Wed Sep 14 02:43:59 +0000 2016", 
+        "default_profile": false, 
+        "default_profile_image": false, 
+        "description": "Web developer, award winning jazz musician, producer.", 
+...
+
+
+
+</sanp>
+  
+</div>
+          </div>
+        
+        </li>
+                <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/yt</h3>
+            <span>Download youtube videos | Download through browser --> link</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+             <span data-ty="input"># ?id=VIDEO_ID</span>
+    <sanp data-ty="input">curl http://ki.tc/yt?id=XDDgL0WvtEs</sanp>
+                
+    <sanp data-ty='input'>{
+  "/yt": {
+    "download_links": [
+      "http://ki.tc/yt?id=XDDgL0WvtEs&format=3gp&res=144p", 
+      "http://ki.tc/yt?id=XDDgL0WvtEs&format=3gp&res=240p", 
+      "http://ki.tc/yt?id=XDDgL0WvtEs&format=mp4&res=360p", 
+      "http://ki.tc/yt?id=XDDgL0WvtEs&format=mp4&res=720p", 
+      "http://ki.tc/yt?id=XDDgL0WvtEs&format=webm&res=360p"
+    ], 
+    "filename": "Buying a 4 Million Lamborghini Veneno", 
+    "url": "https://www.youtube.com/watch?v=XDDgL0WvtEs", 
+    "videos": "[<Video: MPEG-4 Visual (.3gp) - 144p - Simple>, <Video: MPEG-4 Visual (.3gp) - 240p - Simple>, <Video: H.264 (.mp4) - 360p - Baseline>, <Video: H.264 (.mp4) - 720p - High>, <Video: VP8 (.webm) - 360p - N/A>]"
+  }
+}
+
+
+
+
+</sanp>
+  
+</div>
+          </div>
+        
+        </li>
+                <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/links</h3>
+            <span>Retrieve all links from a page</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+             <span data-ty="input"># ?url=URL</span>
+    <sanp data-ty="input">curl http://ki.tc/links?url=http://www.callerpy.io</sanp>
+                
+    <sanp data-ty='input'>{
+  "/links": {
+    "count": 18, 
+    "links": [
+      "#page-top", 
+      "#page-top", 
+      "#about", 
+      "#download", 
+      "#api", 
+      "#contact", 
+      "https://travis-ci.org/Logic-gate/callerpy", 
+      "#about", 
+      "http://www.truecaller.com", 
+      "http://penbang.sysbase.org", 
+      "https://archassault.org/packages/archassault/any/callerypy-git/files/", 
+      "https://openrepos.net/content/maddev/callerpy", 
+      "https://github.com/Logic-gate/callerpy", 
+      "https://github.com/Logic-gate/callerpy/tree/web-app", 
+      "mailto:mad_dev@linuxmail.org", 
+      "https://twitter.com/penbangproject", 
+      "https://github.com/Logic-gate", 
+      "https://kiwiirc.com/client/irc.freenode.net"
+    ], 
+    "url": "http://www.callerpy.io"
+  }
+}
+
+
+
+
+
+</sanp>
+  
+</div>
+          </div>
+        
+        </li>
+
+      
+                <li class="">
+          <div class="info">
+            <i class=""></i>
+            <h3>/img</h3>
+            <span>Retrieve all images from a webpage</span>
+            <div id="termynal" data-termynal data-termynal data-ty-typeDelay="10" data-ty-lineDelay="1">
+             <span data-ty="input"># ?url=URL</span>
+    <sanp data-ty="input">curl http://ki.tc/img?url=http://www.callerpy.io</sanp>
+                
+    <sanp data-ty='input'>{
+  "/img": {
+    "count": 1, 
+    "images": [
+      "https://travis-ci.org/Logic-gate/callerpy.png?branch=master"
+    ], 
+    "url": "http://www.callerpy.io"
+  }
+}
+
+
+
+
+</sanp>
+  
+</div>
+          </div>
+        
+        </li>
+
+           
+
+
+
+
+      </ul>
+    </div>
+    
+  </section>
+  
+  <section class="features-glance">
+<!--          <div class="project">
+        <img class="project-icon is-animated is-animated is-animated is-animated is-animated is-animated" src="/static/images/projects/project-1.svg">
+        
+        <p class="project-name">Protecting Civil Rights in the Era of Big Data</p>
+        
+        <p class="project-client">National Civil Rights Organizations</p>
+        
+        <p class="project-description">
+          The decisions that shape people's lives—in employment, housing, finance, education, criminal justice and other key areas—are increasingly automated using data. With support from the Ford Foundation, we work with the nation's leading civil rights groups to ensure that new technologies treat all individuals fairly.</p>
+        <p class="project-more">We examine how new technologies may disproportionately impact communities of color, women, and other protected groups. We provide policy-ready technical guidance to a coalition of national groups, coordinated by the Leadership Conference on Civil and Human Rights.</p>
+
+      </div>-->
+  </section>
+  
+  <section class="user-int">
+  </section>
+  
+  <section class="delta">
+  </section>
+  
+  <section class="updates">
+  </section>
+</div>
+
+</body>
+

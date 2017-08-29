@@ -1,0 +1,103 @@
+$line-svg: url('data:image/svg+xml,<?xml version="1.0" encoding="utf-8"?> <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="2px" height="2px" viewBox="0 0 2 2" enable-background="new 0 0 600 600" xml:space="preserve"> <line fill="none" stroke="#000000" stroke-miterlimit="10" x1="0" y1="0.5" x2="600" y2="0.5"/> </svg>');
+
+@keyframes waiting {
+  0% {
+    opacity: 0;
+  }
+  
+
+  35%, 75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    
+  }
+}
+
+@keyframes joltBG {
+  0% {
+    opacity: 0.3;
+  }
+  
+
+  22%, 26% {
+    opacity: 0.2;
+  }
+  
+  27%, 45% {
+    opacity: 0.4;
+  }
+  
+  46%, 76% {
+    opacity: 0.5;
+  }
+  
+  76%, 78% {
+    opacity: 0.05;
+  }
+  78% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0.3;  
+  }
+}
+
+.i-has-teh-code {
+  white-space: pre-wrap; // I would prefer to just use pre but it breaks the :before :'(
+  background: rgb(20,30,30);
+  color: rgb(220,230,230);
+  margin: 0 auto;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  padding: 1em 1em 2.5em 1em;
+  line-height: 1.45;
+  position: relative;
+  overflow-x: scroll;
+  
+  &::selection {
+    color: rgb(20,30,30);
+    background: rgb(220,230,230);
+  }
+  
+  &:before {
+    position: absolute;
+    pointer-events: none;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left:0;
+    background-color: rgba(50,50,80, 0.6);
+    content: '';
+    z-index: 100;
+    box-shadow: inset 0px 0px 20px 0px rgba(0,0,60,0.3);
+    background: $line-svg;
+
+    //animate the screen lines
+    animation-name: joltBG;
+    animation-duration: 10000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  &:after {
+    position: absolute;
+    pointer-events: none;
+    bottom: 0em;
+    left: 0em;
+    content: '■';
+    padding: 1em;
+    //animate cursor 
+    animation-name: waiting;
+    animation-duration: 1200ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+body {
+  background: rgba(20,20,30, 0.8);
+  padding: 0.3em;
+}
